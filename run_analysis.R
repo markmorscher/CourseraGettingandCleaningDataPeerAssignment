@@ -62,8 +62,8 @@ rm(data)
 
 library(reshape2)
 meltedData = melt(dataCombined, id=c("Activity", "SubjectID"))
-tinyData = dcast(meltedData, Activity+SubjectID ~ variable, mean)
+tidyData = dcast(meltedData, Activity+SubjectID ~ variable, mean)
 
 # Write out to a text file
 
-write.table(tinyData, file = "tinyData.txt")
+write.table(tidyData, file = "tidyData.txt")
